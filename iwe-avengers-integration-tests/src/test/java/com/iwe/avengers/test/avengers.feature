@@ -3,12 +3,19 @@ Feature: Perform integrated tests on the Avengers registration API
 Background:
 * url 'https://lxoy065tsf.execute-api.us-east-2.amazonaws.com/dev'
 
-Scenario: Get Avenger by Id
+Scenario: Get Avenger by Id - Iron Man
 
-Given path 'avengers', 'sdsa-sasa-asas-sasa'
+Given path 'avengers', 'asas-sdsad-sdsa-asds'
 When method get
 Then status 200
-And match response == {id: '#string', name: 'Iron Man', secretIdentity: 'Tony StarK'}
+And match response == {id: '#string', name: 'Iron Man', secretIdentity: 'Tony Stark'}
+
+Scenario: Get Avenger by Id - Hulk
+
+Given path 'avengers', 'aaaa-aaaa-aaaa-aaaa'
+When method get
+Then status 200
+And match response == {id: '#string', name: 'Hulk', secretIdentity: 'Bruce Banner'}
 
 Scenario: Registry a new Avenger
 
