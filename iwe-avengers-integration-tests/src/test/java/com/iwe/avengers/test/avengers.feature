@@ -23,3 +23,15 @@ Given path 'avengers'
 And request { name: 'Captain America', secretIdentity: 'Steve Rogers' }
 When method post
 Then status 201
+
+Scenario: Avenger Not Found
+
+Given path 'avengers', 'invalid'
+When method get
+Then status 404
+
+Scenario: Delete Avenger By Id
+
+Given path 'avengers', 'asas-sdsad-sdsa-asds'
+When method delete
+Then status 204
