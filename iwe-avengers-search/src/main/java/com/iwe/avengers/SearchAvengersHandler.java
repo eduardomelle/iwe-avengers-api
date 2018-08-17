@@ -1,5 +1,7 @@
 package com.iwe.avengers;
 
+import java.util.NoSuchElementException;
+
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.iwe.avenger.dynamodb.entity.Avenger;
@@ -15,15 +17,17 @@ public class SearchAvengersHandler implements RequestHandler<Avenger, HandlerRes
 	public HandlerResponse handleRequest(final Avenger avenger, final Context context) {
 		final String id = avenger.getId();
 		
+		try {
+		
 		context.getLogger().log("[#] - Initiate search Avenger by id: " + id);
 		
 		final Avenger avengerRetrieved = dao.find(id);
 		
-		if (avengerRetrieved == null) {
+		/*if (avengerRetrieved == null) {
 			throw new AvengerNotFoundException("[NotFound] - Avenger id: " + id + " not found");
-		}
+		}*/
 		
-		context.getLogger().log("[#] - Avenger found " + avengerRetrieved.getName());
+		
 		
 		final HandlerResponse response = HandlerResponse
 				.builder()
@@ -31,7 +35,13 @@ public class SearchAvengersHandler implements RequestHandler<Avenger, HandlerRes
 				.setObjectBody(avengerRetrieved)
 				.build();
 		
+		context.getLogger().log("[#] - Avenger found " + avengerRetrieved.getName());
+		
 		return response;
+		
+		} catch (NoSuchElementException e) {
+			throw new AvengerNotFoundException("[NotFound] - Avenger id: " + id + " not found");
+		}
 	}
 	
 }
