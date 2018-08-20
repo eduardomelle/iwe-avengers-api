@@ -21,7 +21,7 @@ public class AvengerDao {
 	}
 	
 	public void delete(Avenger input) {
-		// mapper.delete();
+		mapper.delete(input);
 	}
 
 }

@@ -1,66 +1,47 @@
-22:43:21.544 karate.env system property was: null 
-22:43:21.936 request:
-1 > GET https://lxoy065tsf.execute-api.us-east-2.amazonaws.com/dev/avengers/asas-sdsad-sdsa-asds
+21:05:10.934 karate.env system property was: null 
+21:05:11.363 request:
+1 > GET https://lxoy065tsf.execute-api.us-east-2.amazonaws.com/dev/avengers/22420855-7b9c-44f4-9b7d-87228fe9d6a8
 1 > Accept-Encoding: gzip,deflate
 1 > Connection: Keep-Alive
 1 > Host: lxoy065tsf.execute-api.us-east-2.amazonaws.com
-1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_112)
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_161)
 
-22:43:23.053 response time in milliseconds: 1116
-1 < 200
+21:05:21.066 response time in milliseconds: 9702
+1 < 404
 1 < Connection: keep-alive
-1 < Content-Length: 77
+1 < Content-Length: 349
 1 < Content-Type: application/json
-1 < Date: Wed, 15 Aug 2018 01:43:22 GMT
-1 < X-Amzn-Trace-Id: Root=1-5b73853a-5a2e88219a5c2af313aadf0a;Sampled=0
-1 < x-amz-apigw-id: LpHBNF4WCYcFeiw=
-1 < x-amzn-RequestId: 984e8cea-a02c-11e8-a368-2bce78fd0f3a
-{"id":"asas-sdsad-sdsa-asds","name":"Iron Man","secretIdentity":"Tony Stark"}
+1 < Date: Mon, 20 Aug 2018 00:05:20 GMT
+1 < X-Amzn-Trace-Id: Root=1-5b7a05b9-fffda421dc426b00a282c31e;Sampled=0
+1 < x-amz-apigw-id: L5XVDH2wCYcFtXQ=
+1 < x-amzn-RequestId: b6449283-a40c-11e8-90dd-f7b42b42449c
+{"errorMessage":"[NotFound] - Avenger id: 22420855-7b9c-44f4-9b7d-87228fe9d6a8 not found","errorType":"com.iwe.avenger.lambda.exception.AvengerNotFoundException","stackTrace":["com.iwe.avengers.SearchAvengersHandler.handleRequest(SearchAvengersHandler.java:43)","com.iwe.avengers.SearchAvengersHandler.handleRequest(SearchAvengersHandler.java:12)"]}
 
-22:43:23.095 karate.env system property was: null 
-22:43:23.100 request:
-1 > GET https://lxoy065tsf.execute-api.us-east-2.amazonaws.com/dev/avengers/aaaa-aaaa-aaaa-aaaa
-1 > Accept-Encoding: gzip,deflate
-1 > Connection: Keep-Alive
-1 > Host: lxoy065tsf.execute-api.us-east-2.amazonaws.com
-1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_112)
+{statusCode=200, body={"id":"22420855-7b9c-44f4-9b7d-87228fe9d6a8","name":"Spider Man","secretIdentity":"Peter Parker"}, headers={}, isBase64Encoded=false}, expected: {id=#string, name=Spider Man, secretIdentity=Peter Parker}, reason: actual value has 1 more key(s) than expected: {statusCode=200, body={"id":"22420855-7b9c-44f4-9b7d-87228fe9d6a8","name":"Spider Man","secretIdentity":"Peter Parker"}, headers={}, isBase64Encoded=false}
+s={}, isBase64Encoded=false}
+ntication Token"}
 
-22:43:23.621 response time in milliseconds: 520
-1 < 200
-1 < Connection: keep-alive
-1 < Content-Length: 74
-1 < Content-Type: application/json
-1 < Date: Wed, 15 Aug 2018 01:43:23 GMT
-1 < X-Amzn-Trace-Id: Root=1-5b73853b-e2ee37b020389b22e41b666a;Sampled=0
-1 < x-amz-apigw-id: LpHBTE7QCYcFWgw=
-1 < x-amzn-RequestId: 98aa1a6c-a02c-11e8-9a09-713284456945
-{"id":"aaaa-aaaa-aaaa-aaaa","name":"Hulk","secretIdentity":"Bruce Banner"}
+19:06:29.667 status code was: 403, expected: 200, response time: 619, url: https://lxoy065tsf.execute-api.us-east-2.amazonaws.com/dev/avengers, response: {"message":"Missing Authentication Token"}
+}
+41.657 request:
+2 > GET https://lxoy065tsf.execute-api.us-east-2.amazonaws.com/dev/avengers/71215541-15c1-433d-b15a-ea2970b774f4
+2 > Accept-Encoding: gzip,deflate
+2 > Connection: Keep-Alive
+2 > Host: lxoy065tsf.execute-api.us-east-2.amazonaws.com
+2 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_161)
 
-22:43:23.631 karate.env system property was: null 
-22:43:23.636 request:
-1 > POST https://lxoy065tsf.execute-api.us-east-2.amazonaws.com/dev/avengers
-1 > Accept-Encoding: gzip,deflate
-1 > Connection: Keep-Alive
-1 > Content-Length: 58
-1 > Content-Type: application/json; charset=UTF-8
-1 > Host: lxoy065tsf.execute-api.us-east-2.amazonaws.com
-1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_112)
-{"name":"Captain America","secretIdentity":"Steve Rogers"}
+18:44:44.020 response time in milliseconds: 2362
+2 < 200
+2 < Connection: keep-alive
+2 < Content-Length: 93
+2 < Content-Type: application/json
+2 < Date: Sat, 18 Aug 2018 21:44:43 GMT
+2 < X-Amzn-Trace-Id: Root=1-5b78934b-2db7b02c5bb16b94b2443ecc;Sampled=0
+2 < x-amz-apigw-id: L1vzwFA0CYcFdUw=
+2 < x-amzn-RequestId: eacaa737-a32f-11e8-9503-510c09c6d509
+{"id":"71215541-15c1-433d-b15a-ea2970b774f4","name":"Iron Man","secretIdentity":"Tony Stark"}
 
-22:43:24.173 response time in milliseconds: 537
-1 < 201
-1 < Connection: keep-alive
-1 < Content-Length: 68
-1 < Content-Type: application/json
-1 < Date: Wed, 15 Aug 2018 01:43:24 GMT
-1 < X-Amzn-Trace-Id: Root=1-5b73853c-026ae7a5c9d2b625084dfaf1;Sampled=0
-1 < x-amz-apigw-id: LpHBYESICYcFhzw=
-1 < x-amzn-RequestId: 98faabd6-a02c-11e8-abba-c7780d684269
-{"id":"14","name":"Captain America","secretIdentity":"Steve Rogers"}
-
-22:43:24.184 karate.env system property was: null 
-22:43:24.188 request:
-1 > GET https://lxoy065tsf.execute-api.us-east-2.amazonaws.com/dev/avengers/invalid
+ GET https://lxoy065tsf.execute-api.us-east-2.amazonaws.com/dev/avengers/invalid
 1 > Accept-Encoding: gzip,deflate
 1 > Connection: Keep-Alive
 1 > Host: lxoy065tsf.execute-api.us-east-2.amazonaws.com
