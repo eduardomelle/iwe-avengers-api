@@ -43,8 +43,8 @@ public class RemoveAvengerHandler implements RequestHandler<Avenger, HandlerResp
 		}
 
 		context.getLogger().log("[#] - Avenger found! Removing...");
-
-		// dao.delete(id);
+		
+		dao.delete(retrivedAvenger);
 
 		context.getLogger().log("[#] - Successfully removed Avenger");
 
