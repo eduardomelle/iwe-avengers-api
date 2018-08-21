@@ -20,8 +20,8 @@ public class AvengerDao {
 		return newAvenger;
 	}
 	
-	public void delete(Avenger input) {
-		mapper.delete(input);
+	public void delete(Avenger avenger) {
+		mapper.delete(avenger);
 	}
 
 }

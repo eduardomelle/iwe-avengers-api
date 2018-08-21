@@ -16,32 +16,26 @@ public class SearchAvengersHandler implements RequestHandler<Avenger, HandlerRes
 	@Override
 	public HandlerResponse handleRequest(final Avenger avenger, final Context context) {
 		final String id = avenger.getId();
-		
+
 		try {
-		
-		context.getLogger().log("[#] - Initiate search Avenger by id: " + id);
-		
-		final Avenger avengerRetrieved = dao.find(id);
-		
-		/*if (avengerRetrieved == null) {
-			throw new AvengerNotFoundException("[NotFound] - Avenger id: " + id + " not found");
-		}*/
-		
-		
-		
-		final HandlerResponse response = HandlerResponse
-				.builder()
-				.setStatusCode(200)
-				.setObjectBody(avengerRetrieved)
-				.build();
-		
-		context.getLogger().log("[#] - Avenger found " + avengerRetrieved.getName());
-		
-		return response;
-		
+			context.getLogger().log("[#] - Initiate search Avenger by id: " + id);
+
+			final Avenger avengerRetrieved = dao.find(id);
+
+			/*
+			 * if (avengerRetrieved == null) { throw new
+			 * AvengerNotFoundException("[NotFound] - Avenger id: " + id + " not found"); }
+			 */
+
+			final HandlerResponse response = HandlerResponse.builder().setStatusCode(200)
+					.setObjectBody(avengerRetrieved).build();
+
+			context.getLogger().log("[#] - Avenger found " + avengerRetrieved.getName());
+
+			return response;
 		} catch (NoSuchElementException e) {
 			throw new AvengerNotFoundException("[NotFound] - Avenger id: " + id + " not found");
 		}
 	}
-	
+
 }
